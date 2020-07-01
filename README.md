@@ -6,6 +6,7 @@ Stage 1
 - Have at least 3 microservices (operator & services)
 - Have a service that will join the schemas from the microservices
 - Just query type
+- Have a docker image
 
 Stage 2
 - Add mutate action

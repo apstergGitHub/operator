@@ -1,7 +1,7 @@
 plugins {
     application
     id("org.springframework.boot") version "2.2.5.RELEASE"
-    id("com.github.johnrengelman.shadow") version "4.0.3"
+    id("com.github.johnrengelman.shadow") version "6.0.0"
 }
 
 application {
@@ -10,10 +10,10 @@ application {
 
 tasks {
     withType(com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar::class.java) {
-        baseName = "operator-fat"
+        fun getArchiveBaseName() = project.objects.property(String::class.java).set("operator-fat")
     }
 }
 
 dependencies {
-    implementation("com.expediagroup:graphql-kotlin-spring-server:2.0.0-RC9.1")
+    implementation("com.expediagroup:graphql-kotlin-spring-server:3.3.0")
 }

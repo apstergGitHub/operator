@@ -1,8 +1,8 @@
 plugins {
-    kotlin("jvm") version "1.3.61"
+    kotlin("jvm") version "1.3.72"
 }
 
-group = "services"
+group = "com.roger"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -23,10 +23,10 @@ subprojects {
 
     tasks {
         compileKotlin {
-            kotlinOptions.jvmTarget = "11"
+            kotlinOptions.jvmTarget = "1.8"
         }
         compileTestKotlin {
-            kotlinOptions.jvmTarget = "11"
+            kotlinOptions.jvmTarget = "1.8"
         }
     }
 }
