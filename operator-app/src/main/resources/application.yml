@@ -1,4 +1,4 @@
 graphql:
   packages: "com.roger.operator.domain"
 server:
-  port: 8088
+  port: ${PORT:8080}
