@@ -1,4 +1,4 @@
-package service.operator.domain
+package com.roger.operator.domain
 
 import com.expediagroup.graphql.SchemaGeneratorConfig
 import com.expediagroup.graphql.TopLevelObject
@@ -12,10 +12,22 @@ private val operators = mapOf(
         "Greek Freak",
         "Residential",
         CareLevel(1),
-        listOf(Feature("IPV6"), Feature("CallForward"))
+        listOf(
+            Feature("IPV6"),
+            Feature("CallForward")
+        )
     ),
-    "ferhat" to Operator("ferhat", "Turkish Freak", "Business", CareLevel(3), listOf(Feature("IPV6"))),
-    "tom" to Operator("tom", "British Freak", "All", CareLevel(4), listOf(Feature("IPV6"), Feature("Advanced")))
+    "ferhat" to Operator(
+        "ferhat", "Turkish Freak", "Business",
+        CareLevel(3), listOf(Feature("IPV6"))
+    ),
+    "tom" to Operator(
+        "tom", "British Freak", "All",
+        CareLevel(4), listOf(
+            Feature("IPV6"),
+            Feature("Advanced")
+        )
+    )
 )
 
 @Component
@@ -26,6 +38,9 @@ class OperatorQuery : Query {
 }
 
 // Generate the schema
-val config = SchemaGeneratorConfig(supportedPackages = listOf("service.operator.domain"))
+val config = SchemaGeneratorConfig(supportedPackages = listOf("com.roger.operator.domain"))
 val queries = listOf(TopLevelObject(OperatorQuery()))
-val schema = toSchema(config, queries)
+val schema = toSchema(
+    config,
+    queries
+)

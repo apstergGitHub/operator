@@ -1,16 +1,15 @@
 plugins {
     application
-    id("org.springframework.boot") version "2.2.5.RELEASE"
-    id("com.github.johnrengelman.shadow") version "6.0.0"
+    id("org.springframework.boot") version "2.3.1.RELEASE"
 }
 
 application {
-    mainClassName = "service.operator.Launcher"
+    mainClassName = "com.roger.operator.Launcher"
 }
 
 tasks {
-    withType(com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar::class.java) {
-        fun getArchiveBaseName() = project.objects.property(String::class.java).set("operator-fat")
+    bootJar {
+        mainClassName = "com.roger.operator.Launcher"
     }
 }
 

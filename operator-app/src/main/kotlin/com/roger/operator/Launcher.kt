@@ -1,4 +1,4 @@
-package service.operator
+package com.roger.operator
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

@@ -1,4 +1,4 @@
-package service.operator.domain
+package com.roger.operator.domain
 
 data class Operator(
     val code: String,
