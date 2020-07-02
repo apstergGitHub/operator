@@ -20,7 +20,7 @@ open class GraphqlConfig(@Autowired private val operatorDao: OperatorDao) {
             environment: DataFetchingEnvironment,
             representations: List<Map<String, Any>>
         ): List<Service?> = representations.map {
-            val operatorCode = it["code"].toString()
+            val operatorCode = it["operatorCode"].toString()
             Service(operatorCode, operatorDao.get(operatorCode))
         }
     }

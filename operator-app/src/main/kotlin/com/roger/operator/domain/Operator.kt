@@ -14,9 +14,9 @@ data class Operator(
     val features: List<Feature>
 )
 
-@KeyDirective(fields = FieldSet("code"))
+@KeyDirective(fields = FieldSet("operatorCode"))
 @ExtendsDirective
 data class Service(
-    @property:ExternalDirective val code: String,
+    @property:ExternalDirective val operatorCode: String,
     val operator: Operator
 )
