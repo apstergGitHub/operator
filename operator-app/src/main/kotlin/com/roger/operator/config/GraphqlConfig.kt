@@ -7,15 +7,15 @@ import com.roger.operator.domain.Operator
 import graphql.schema.DataFetchingEnvironment
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
-import org.springframework.stereotype.Component
+import org.springframework.context.annotation.Configuration
 
-@Component
-class GraphqlConfig(@Autowired private val operatorDao: OperatorDao) {
+@Configuration
+open class GraphqlConfig(@Autowired private val operatorDao: OperatorDao) {
 
     @Bean
-    fun federatedTypeRegistry() = FederatedTypeRegistry(mapOf("Service" to operatorResolver))
+    open fun federatedTypeRegistry() = FederatedTypeRegistry(mapOf("Service" to operatorResolver))
 
-    val operatorResolver = object : FederatedTypeResolver<Operator> {
+    private val operatorResolver = object : FederatedTypeResolver<Operator> {
         override suspend fun resolve(
             environment: DataFetchingEnvironment,
             representations: List<Map<String, Any>>

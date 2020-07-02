@@ -2,11 +2,11 @@ package com.roger.operator.config
 
 import com.roger.operator.dao.OperatorDao
 import org.springframework.context.annotation.Bean
-import org.springframework.stereotype.Component
+import org.springframework.context.annotation.Configuration
 
-@Component
-class DaoConfig {
+@Configuration
+open class DaoConfig {
 
     @Bean
-    fun operatorDao() = OperatorDao()
+    open fun operatorDao() = OperatorDao()
 }
