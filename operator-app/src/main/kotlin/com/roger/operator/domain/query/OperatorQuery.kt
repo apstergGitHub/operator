@@ -11,11 +11,3 @@ class OperatorQuery(@Autowired private val operatorDao: OperatorDao = OperatorDa
     fun operator(code: String): Operator = operatorDao.get(code)
 }
 
-// Generate the schema
-//val config = SchemaGeneratorConfig(supportedPackages = listOf("com.roger.operator.domain"))
-//val queries = listOf(TopLevelObject(OperatorQuery()))
-//val schema = toSchema(
-//    config,
-//    queries
-//)
-
