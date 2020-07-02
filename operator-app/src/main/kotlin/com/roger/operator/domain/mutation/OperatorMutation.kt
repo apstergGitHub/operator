@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class OperatorMutation(@Autowired private val operatorDao: OperatorDao) : Mutation {
+class OperatorMutation(@Autowired private val operatorDao: OperatorDao = OperatorDao()) : Mutation {
     fun operator(input: OperatorInput): Operator = operatorDao.update(input)
 }
 

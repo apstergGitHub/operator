@@ -4,9 +4,7 @@ import com.roger.operator.domain.CareLevel
 import com.roger.operator.domain.Feature
 import com.roger.operator.domain.Operator
 import com.roger.operator.domain.mutation.OperatorInput
-import org.springframework.stereotype.Component
 
-@Component
 class OperatorDao {
     private val operators: MutableMap<String, Operator> = mutableMapOf(
         "apostolos" to Operator(
